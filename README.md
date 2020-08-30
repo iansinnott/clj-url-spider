@@ -1,10 +1,10 @@
 # url-spider
 
-FIXME: description
+This was just meant to be some clojure practice. Well, it was just some clojure practice. Rather unsatisfactory in fact.
 
-## Installation
+The current state as of this commit is a non-working script. It runs forever because I didn't normalize URLs well, so it starts hitting url/ then url// then url/// etc.
 
-Download from http://example.com/FIXME.
+The reason it was unsatisfactory though was because I just didn't want to do the work of URL normalization. Well that's the learning spirit right? Whether or not this was the right choice it just felt like a lot of friction so I shelved this.
 
 ## Usage
 
