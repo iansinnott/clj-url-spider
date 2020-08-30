@@ -10,7 +10,7 @@ Download from http://example.com/FIXME.
 
 FIXME: explanation
 
-    $ java -jar url-spider-0.1.0-standalone.jar [args]
+    $ java -jar url-spider-0.1.0-standalone.jar [URL]
 
 ## Options
 
@@ -25,7 +25,9 @@ FIXME: listing of options this app accepts.
 ...
 
 ### Any Other Sections
+
 ### That You Think
+
 ### Might be Useful
 
 ## License
