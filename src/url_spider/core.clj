@@ -1,7 +1,7 @@
 (ns url-spider.core
   (:gen-class)
+  (:require [url-spider.second-try :refer [blah]])
   (:import [org.jsoup Jsoup]))
-
 
 (defn el->attrs
   "Extract the attributes of an Element into a plain map"
@@ -85,8 +85,6 @@
      (sort-by count))
 (def include-subdomains false)
 (def root-url "https://iansinnott.com/")
-
-
 
 (comment
   (links-all-pages "https://iansinnott.com/")
