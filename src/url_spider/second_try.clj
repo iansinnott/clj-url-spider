@@ -38,6 +38,33 @@
                 (recur)))))
     c))
 
+(defn pingpong []
+  (let [c (chan)
+        ping (fn [] (>! c "ping"))
+        pong (fn [] (>! c "pong"))
+        invert #(if (= % "ping") "pong" "ping")]
+    (go (loop [prev "pong"]
+          (let [next (<! c)]
+            (when (= prev next)
+              (println "You must " (invert next) "!"))
+            (recur next))))
+    [ping pong c]))
+
+(def _ (pingpong))
+(def ch (last _))
+
+(>!! ch "ping")
+(>!! ch "pong")
+
+(let [[ping pong c] (pingpong)]
+  (>!! c "ping")
+  (>!! c "ping"))
+  ;; (pong)
+  ;; (ping)
+  ;; (ping) ;; Expect "You must pong!"
+  ;; (pong)
+  ;; (pong)) ;; Expect "You must ping!"
+
 ;; Create a password machine
 (def p-machine (password-machine))
 
